@@ -1,3 +1,7 @@
+// simpleui2.css                             -+-CSS-+-
+
+// This file is identical to simpleui.css
+
 .simple_button {
     display            : inline-block;
     width              : 100px;
@@ -22,6 +26,10 @@
     border             : 1px solid black;
     border-radius      : 3px;
     -webkit-box-sizing : border-box;
+}
+
+#input2 {
+    text-align : right;
 }
 
 .simple_entry:focus {

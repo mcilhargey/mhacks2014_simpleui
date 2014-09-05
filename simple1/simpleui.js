@@ -1,3 +1,5 @@
+// simpleui.js                                                          -+-JS-+-
+
 // Declare a global variable to hold where our output will go
 var outputPane;
 

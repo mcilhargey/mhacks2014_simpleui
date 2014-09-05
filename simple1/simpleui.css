@@ -1,15 +1,32 @@
+// simpleui2.css                             -+-CSS-+-
+
+// This file lists a set of properties and styles to be applied to elements.
+
+// This is a css rule meant to describe how elements with the class simple_button are styled
 .simple_button {
+    // This line indicates that we want the element to appear in line with other elements
     display            : inline-block;
+    
+    // These properties describe the size of the element
     width              : 100px;
     height             : 22px;
+    
+    // These descrive the size and style of the border on the buttons
+    border             : 1px solid black;
     border-radius      : 3px;
     margin             : 0px;
-    border             : 1px solid black;
+    
+    // This colors the background
     background-color   : #6BC968;
+
+    // This makes sizing more exact
     -webkit-box-sizing : border-box;
+    
+    // Center our text
     text-align         : center;
 }
 
+// These behave like above for simple_entry elements
 .simple_entry {
     display            : inline-block;
     height             : 22px;
@@ -17,18 +34,29 @@
     padding            : 2px;
     margin             : 0px;
     background-color   : #A5F2A2;
-    -webkit-appearance : none;
-    -moz-appearance    : none;
     border             : 1px solid black;
     border-radius      : 3px;
     -webkit-box-sizing : border-box;
+    
+    // These properties tell the entry to not use the default entry appearence
+    -webkit-appearance : none;
+    -moz-appearance    : none;
 }
 
+// This selector targets an element by it's id: so while input1 and input 2 have the above properties, 
+// only input2 will be right aligned.
+#input2 {
+    text-align : right;
+}
+
+// This property removes the highlight outline when the entry has focus
 .simple_entry:focus {
     outline : 0px;
 }
 
+// These are the styles for the output pane
 .simple_output {
+    // Display block indicates it should live on it's own, sending the next elements to a new line. 
     display            : block;
     height             : 500px;
     width              : 500px;
