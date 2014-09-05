@@ -10,6 +10,8 @@ Requirements:
   
 This is a demo in three parts: 
 
-Part 1: A static webpage UI
-Part 2: A simple node server
-Part 3: Combining the two together
+Part 1: A static webpage UI (html/js/css)
+
+Part 2: A simple node server (nodejs)
+
+Part 3: Combining the two together (above + ExpressJS + SocketIO)

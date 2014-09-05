@@ -47,7 +47,7 @@ function onInputChange(e) {
     
     // Here we send an input_change event, letting the server know which input was changed and
     // what the old and new values are.
-    socket.emit('input_change', { id: elem.id, oldvalue : oldText, newvalue: newtext });
+    socket.emit('input_change', { id: elem.id, oldvalue : oldText, newvalue: newText });
     
     // Now we store the new text as old
     elem.oldText = newText;
