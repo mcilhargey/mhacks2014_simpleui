@@ -31,6 +31,47 @@ app.get('/', function(req, res){
     
 });
 
+app.use('/randomimage/', express.static(__dirname + '/simple2/'));
+app.get('/randomimage/', function (req, res) {
+    fs.readdir("simple2/images",
+        function (err, files) {
+            // If we have an error, then send back a 500 server error and write a short message.
+            if (err) {
+                res.writeHead(500);
+                return res.end('Error loading simpleui2.html');
+            }
+            var images = [];
+            // Grab all file names with an image extension (here, jpg or png);
+            for (var i in files) {
+                var file = files[i];
+                if (file.indexOf('png') === file.length - 3) {
+                    images.push(file);
+                }
+                else if (file.indexOf('jpg') === file.length - 3) {
+                    images.push(file);
+                }
+                else if (file.indexOf('jpeg') === file.length - 4) {
+                    images.push(file);
+                }
+            }
+            
+            // if we have images, choose a random one
+            if (images.length > 0) {
+                var randNum = Math.floor(Math.random() * images.length) ;
+                var doc = "<html><body><img src=\"./images/" + images[randNum] + "\"></img></body></html>";
+                res.writeHead(200, {'Content Type': 'text/html'});
+                res.end(doc);
+            }
+            else {
+                // else send a sad message
+                var msg = "There were no images :(";
+                res.writeHead(200, {'content Type': 'text/plain'});
+                res.end(msg);
+            }
+        }
+    )
+})
+
 // tell the server to listen on the port 8080
 server.listen(8080);
 
